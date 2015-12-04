@@ -1,0 +1,9 @@
+.header{
+    background-color: #303a40;
+}
+/*.navbar-default{
+    background-color: #303a40;
+}*/
+.navbar-nav>li{
+    float: left;
+}

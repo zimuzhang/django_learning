@@ -65,7 +65,7 @@ USE_TZ = False
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.jion(PROJECT_PATH, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -78,7 +78,7 @@ SITE_URL = os.environ.get('SITE_URL', 'http://localhost/')
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.jion(PROJECT_PATH, 'static')
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -108,7 +108,7 @@ TEMPLATE_LOADERS = (
     # 'django.template.loaders.filesystem.Loader',
     # 'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
-    'SYMixed.template.MakoTemplateLoader'
+    'STMixed.template.MakoTemplateLoader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -134,17 +134,17 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'apps.angular_app',
+    # 'django.contrib.auth',
+    # 'django.contrib.contenttypes',
+    # 'django.contrib.sessions',
+    # 'django.contrib.sites',
+    # 'django.contrib.messages',
+    # 'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    # 'apps.angulardemo',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -177,3 +177,5 @@ LOGGING = {
         },
     }
 }
+
+MAKO_MODULE_DIR = os.path.join(PROJECT_PATH, 'tmp')

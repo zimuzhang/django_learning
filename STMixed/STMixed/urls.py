@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -14,6 +15,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'STMixed.views.home', name='home'),
+    # url(r'^argular-demo$', include('apps.angular_app.urls', namespace='argular'))
+)
 
-    url(r'^argular-demo$', include(apps.angular_app.urls, namespace='argular'))
+urlpatterns += patterns('', 
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT})
 )

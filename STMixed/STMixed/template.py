@@ -10,12 +10,12 @@ from mako.exceptions import TopLevelLookupException
 app_template_dirs = []
 
 #遍历INSTALL_APP
-for app in settings.INSTALL_APP:
+for app in settings.INSTALLED_APPS:
     if app.startwiths('django'):
         continue
     try:
         mod = import_module(app)
-    except ImportError e:
+    except ImportError, e:
         raise ImproperlyConfigured('ImportError %s: %s' % (app, e.args[0]))
     template_dir = os.path.join(os.path.dirname(mod.__file__), 'templates')
     if os.path.isdir(template_dir):
@@ -37,7 +37,7 @@ class Template(object):
 
 class MakoTemplateLoader(BaseLoader):
     is_usable = True
-    
+
     template_dirs = getattr(settings,'MAKO_TEMPLATE_DIRS', settings.TEMPLATE_DIRS)
     input_encoding = getattr(settings, "MAKO_INPUT_ENCODING", settings.DEFAULT_CHARSET)
     output_encoding = getattr(settings, "MAKO_OUTPUT_ENCODING", settings.DEFAULT_CHARSET)

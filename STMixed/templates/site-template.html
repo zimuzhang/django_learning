@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta chart-set="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        <%block name="site_name">Learning</%block>
+    </title>
+    <link rel="stylesheet" type="text/css" href="${STATIC_URL}bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${STATIC_URL}work/css/work.css">
+    <%block name="site_css"></%block>
+</head>
+<body>
+    <!-- head -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-6">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li><a>test1</a></li>
+                        <li><a>test2</a></li>
+                        <li><a>test3</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <!-- content -->
+        <%block name="site_content"></%block>
+
+    <!-- foot -->
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%block name="site_script">
+    </%block>
+</body>
+</html>
