@@ -7,3 +7,20 @@
 .navbar-nav>li{
     float: left;
 }
+
+.pull-right{
+    float: : right;
+}
+.content-preview{
+    padding: 4em 0 4em;
+}
+.preview{
+    background-color: #fff;
+    padding-top: 20px;
+}
+.content-preview .dec{
+    text-align: center;
+}
+/*.content-preview .item{
+    float: left;
+}*/
